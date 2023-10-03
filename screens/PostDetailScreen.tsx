@@ -1,10 +1,12 @@
 import React from 'react';
 import {
+  Button,
   Image,
   Pressable,
   SafeAreaView,
   ScrollView,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
@@ -22,7 +24,7 @@ function PostDetailScreen() {
   const navigation = useNavigation();
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView style={{marginBottom: 48}}>
         <View>
           <View
             style={{
@@ -243,6 +245,21 @@ function PostDetailScreen() {
         </View>
         <View style={{height: 0.5, backgroundColor: '#C4C4C4'}} />
       </ScrollView>
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 20,
+          height: 60,
+          flexDirection: 'row',
+          alignItems: 'center',
+          width: '100%',
+          paddingHorizontal: 24,
+          zIndex: 10,
+        }}>
+        <View style={{height: 0.5, backgroundColor: '#C4C4C4'}} />
+        <TextInput placeholder="Enter Comment" style={{flex: 1}} />
+        <Button title="Comment" onPress={() => console.log('comment')} />
+      </View>
     </SafeAreaView>
   );
 }
